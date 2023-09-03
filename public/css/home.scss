@@ -1,0 +1,206 @@
+body {
+  background-color: #eeeded;
+  margin: 0px;
+  padding: 0px;
+}
+
+//  header*****
+.head {
+  display: flex;
+  position: fixed;
+  top: 0%;
+  width: 100vw;
+  justify-content: space-between;
+  background-color: #1b6b93;
+  padding: 5px;
+  color: aliceblue;
+  height: 60px;
+  a {
+    text-decoration: none;
+    font-size: 15px;
+    color: aliceblue;
+  }
+  .link {
+    color: aliceblue;
+    padding: 20px;
+    a {
+      font-size: 18px;
+    }
+    span {
+      font-size: 25px;
+    }
+  }
+}
+
+// main******
+
+.singIn {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+  margin-top: 50px;
+  .form {
+    display: flex;
+    flex-direction: column;
+    width: 500px;
+    button {
+      margin-top: 10px;
+      width: 100px;
+    }
+  }
+}
+
+.singUp {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+  margin-top: 50px;
+  .form {
+    display: flex;
+    flex-direction: column;
+    width: 500px;
+    button {
+      margin-top: 10px;
+      width: 100px;
+    }
+  }
+}
+
+// body area of home page
+.home {
+  display: flex;
+  margin-top: 3%;
+  justify-content: space-between;
+}
+
+.left_sidebar {
+  position: fixed;
+  top: 7%;
+  left: 0%;
+  width: 20%;
+  height: 100vh;
+  li {
+    img {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+    }
+    span {
+      position: relative;
+      top: 5px;
+      font-size: 20px;
+    }
+  }
+  li:hover {
+    background-color: rgba(169, 160, 165, 0.8);
+  }
+}
+
+.right_sidebar {
+  position: fixed;
+  right: 0%;
+  top: 7%;
+  width: 20%;
+  height: 100vh;
+  text-align: center;
+}
+
+// mid body content
+
+.leftContainer {
+  width: 20%;
+}
+.rigthContainer {
+  width: 40%;
+}
+
+.postContainer {
+  width: 60%;
+  text-align: center;
+  min-height: 1000px;
+  height: 100%;
+  padding-top: 20px;
+  box-shadow: 0px 0px 10px 0px black;
+}
+
+// Post
+
+.Post_form {
+  display: flex;
+  justify-content: center;
+}
+
+.Post_formimage {
+  width: 80px;
+  border-radius: 50%;
+}
+
+#Post_button {
+  margin-top: 25px;
+  height: 30px;
+  width: 50px;
+  color: red;
+}
+
+.post_list {
+  margin: 3%;
+}
+
+// comments
+
+.comments {
+  font-size: 20px;
+}
+
+// ChatBox
+
+.Chat_box {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  background-color: aliceblue;
+  bottom: 0%;
+  right: 0%;
+  border: 1px solid grey;
+  height: 400px;
+  width: 300px;
+
+  #chat_container {
+    height: 100%;
+    overflow-y: auto;
+
+    .user_chat {
+      position: relative;
+      left: 0px;
+      word-break: break-all;
+      border: 1px solid grey;
+      background-color: yellow;
+      min-width: 50px;
+      max-width: 200px;
+      min-height: 50px;
+      border-radius: 0.8rem;
+      margin: 1%;
+    }
+    .friend_chat {
+      position: relative;
+      right: -180px;
+      border: 1px solid grey;
+      background-color: skyblue;
+      width: 100px;
+      height: 50px;
+      text-align: center;
+      border-radius: 0.8rem;
+      margin: 1%;
+    }
+  }
+}
+
+#Send_chat {
+  display: flex;
+  input {
+    width: 80%;
+  }
+  button {
+    width: 20%;
+  }
+}

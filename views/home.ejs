@@ -1,0 +1,42 @@
+<div class="home">
+
+    <!-- left side bar area -->
+
+    <% if(locals.user) {%>
+        <%- include("_leftSidebar") %>
+            <% } %>
+
+                <!-- Central area -->
+                <aside>
+                    <div class="lefContainer"></div>
+                </aside>
+
+                <div class="postContainer">
+                    <% if(locals.user) {%>
+                        <h2>Write your Posts </h5>
+                            <%}else{%>
+                                <h2 style="text-decoration: underline;">WELCOME TO HOME PAGE</h2>
+                                <%}%>
+                                    <ul type="none" style="padding: 0%;">
+                                        <%- include("_post") %>
+                                    </ul>
+                </div>
+                <aside>
+                    <div class="rightContainer"></div>
+                </aside>
+
+                <!-- right side bar area -->
+                <% if(locals.user) {%>
+                    <%- include("_rightSidebar") %>
+                        <% } %>
+
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"
+    integrity="sha512-3gJwYpMe3QewGELv8k/BX9vcqhryRdzRMxVfq6ngyWXwo03GFEzjsUm8Q7RZcHPHksttq7/GFoxjCVUjkjvPdw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.7.2/socket.io.js"></script>
+<script src="<%= assetPath("Createpost.js")%>"></script>
+<script src="<%= assetPath("Deletepost.js")%>"></script>
+<script src="<%= assetPath("CreateComment.js")%>"></script>
+<script src="<%= assetPath("Createlikes.js")%>"></script>

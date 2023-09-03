@@ -1,0 +1,39 @@
+<li id="post">
+    <% if (locals.user) {%>
+        <form action="/post/create" id="user_post" method="post">
+            <div class="Post_form">
+                <img src="<%= user.avatar %>" alt="" class="Post_formimage" style="margin: 3px;">
+                <textarea name="content" id="content" cols="35" rows="3" id="Post_text" placeholder="Enter Your Text..."
+                    style="margin: 3px;"></textarea>
+                <button type="submit" id="Post_button">Post</button>
+            </div>
+        </form>
+        <%}%>
+            <ul type="none" class="post_list">
+                <% for(post of Post ) {%>
+                    <li class="post-<%= post._id %>">
+                        <h4>
+                            <%= post.content %> &nbsp;<sub style="position: static;">Posted by--<%= post.user.name %></sub>
+                            <%- include("_Postlikebutton") %>
+                            <% if(locals.user && locals.user.id==post.user.id) {%>
+                                    <span style="font-size: 20px;">
+                                        <a href="/post/delete/<%=post.id %>" class="delete_post">delete</a>
+                                    </span>
+                                    <%}%>
+                        </h4>
+
+                        <ul class="comments_container" type="none">
+                            <%- include("_comment") %>
+                        </ul>
+
+                        <br>
+
+                        <%}%>
+                    </li>
+            </ul>
+
+
+
+</li>
+
+</script>

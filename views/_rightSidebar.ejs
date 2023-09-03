@@ -1,0 +1,27 @@
+<div class="right_sidebar">
+    <div id="friends">
+        <h2>Friends</h2>
+        <ul type="none">
+            <li><%= user.friendship %></li>
+        </ul>
+    </div>
+
+    <div id="users">
+        <h2>Users</h2>
+        <% for(u of all_users) {%>
+            <ul type="none">
+                <% if(u.name !=locals.user.name) {%>
+                    <a href="/user/profile/<%= u._id  %>">
+                      <li> <h3> <%= u.name %></h3>  </li>
+
+                    </a>
+                    <%}%>
+                        &nbsp;
+                      <li>  <form action="/friends/create/?id=<%= user.id %>" method="Post">
+                            <button>Add Friend</button>
+                        </form> </li>
+                    </ul>
+
+            <%}%>
+    </div>
+</div>

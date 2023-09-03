@@ -1,0 +1,33 @@
+<li>
+    <div>
+        <% if(locals.user){%>
+            <form action="/comment/create"  class="user-comment"  method="post">
+                <input name="Comments" id="content" cols="30" rows="0" placeholder="Enter Your comment..."></input>
+                <input type="hidden" name="post" value="<%= post._id %>">
+                <button type="submit">Comment</button>
+            </form>
+
+            <%}%>
+    </div>
+
+</li >
+
+<li class="Comments_list">
+    <% for(comment of post.comments) {%>
+        <div >
+            <p class="comments">
+                <%= comment.Comments%>--<sub  style="position: static;">
+                        <%= comment.user.name %>
+                    </sub>
+                    <%- include("_Commentlikebutton") %>
+                    <% if(locals.user && comment.user.id==locals.user.id) {%>
+                        <a href="/comment/delete/<%= comment._id %>">delete</a>
+
+                        <%}%>
+
+            </p>
+        </div>
+        <%}%>
+
+
+</li>

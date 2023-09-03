@@ -1,0 +1,37 @@
+<div class="user_info">
+  <div class="user_bio">
+    <div class="Bio">
+      <center>
+        <h2>Bio</h2>
+      </center>
+      <p><b> name: <%=user.name %> </b></p>
+      <p><b> email: <%=user.email %> </b></p>
+      <p><b> Phone : 9774548155 </b></p>
+    </div>
+    <div class="friend_request">
+      <% if(locals.user.id==user_profile.id) {%>
+        <% for(friend of friend) {%>
+          <div style="display: flex;">
+            <img src="<%= friend.form_user.avatar %>" alt="img" style="border-radius: 50%;">
+            <h3>
+              <%= friend.form_user.name %>
+            </h3>
+            <% if(friend.show == true) {%> 
+            <form action="/friends/accept/?id=<%= user_profile.id %>&frdDoc=<%= friend.id %>" method="post">
+              <button>Accept</button>
+            </form>
+            <form action="/friends/remove/?id=<%= user_profile.id %>">
+              <button>Remove</button>
+            </form>
+            <% } %>
+          </div>
+          <% } %>
+            <% } %>
+    </div>
+  </div>
+  <div class="user_post">
+    <ul type="none">
+      <%- include("_post") %>
+    </ul>
+  </div>
+</div>

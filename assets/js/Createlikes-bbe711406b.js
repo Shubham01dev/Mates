@@ -1,0 +1,1 @@
+{let e=function(){$(document).on("click",".Like",function(e){e.preventDefault();var t=$(this);$.ajax({url:""+t.attr("action"),type:"POST",success:function(e){e.delete,t.find("> .Post_like")[0].innerText=e.likeabels.like.length}})})};e()}

@@ -1,0 +1,16 @@
+<header>
+   <div class="head">
+      <div>
+         <a href="/"><h1>Mates</h1></a>
+      </div>
+      <div class="link"> 
+         <% if(locals.user){%>
+               <a href="/user/profile/<%= user._id  %>"> <span><%= user.name %></span></a> 
+               <a href="/user/singOut">Singout</a>
+            <%}else{%> 
+            <a href="/user/singIn"> SingIn </a> <span>/</span> <a href="/user/SingUp"> SingUp  </a>
+            <%}%> 
+      </div>
+   </div>
+
+</header>

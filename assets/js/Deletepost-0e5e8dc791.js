@@ -1,0 +1,1 @@
+{let e=function(){$(".delete_post").click(function(e){e.preventDefault(),$.ajax({type:"get",url:$(".delete_post").prop("href"),success:e=>{console.log("Post SuccessFult Deleted"),$(".post-"+e.post._id).remove()},error:e=>{console.log("error While Deleting Post",e)}})})};e()}

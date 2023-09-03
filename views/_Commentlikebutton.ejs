@@ -1,0 +1,9 @@
+<% if(locals.user) {%>
+    <form action="/Likes/toggle/?id=<%= comment._id %>&type=Comments" class="Like" method="post">
+        <button type="submit"><i class="fa-regular fa-heart Post_btn"></i></button>
+        <span class="Post_like">
+            <%= comment.like.length %>
+        </span>
+    </form>
+
+    <% } %>
