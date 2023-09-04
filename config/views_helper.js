@@ -2,6 +2,7 @@ const env = require("./environment");
 const fs =require("fs")
 const path = require("path")
 
+// To acces the file (assets) created by gulp 
 module.exports = (app) =>{
     app.locals.assetPath = function(filePath){
           let succesor;

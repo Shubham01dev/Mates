@@ -44,7 +44,7 @@
                         <script>
                             <% - include("_flash") %>
                         </script>
-                        <script src="/js/Chat_engine.js"></script>
+                        <script src="<%= assetPath("Chat_engine.js")%>"></script>
                         <% if(locals.user) {%>
                             <script>
                                     new ChatEngine("Chat_box", "<%= locals.user.email %>")
